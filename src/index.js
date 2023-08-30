@@ -95,16 +95,31 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
+// function Pizza(props) {
+//   console.log(props);
+
+//   return (
+//     <li className="pizza">
+//       <img src={props.pizzaobj.photoName} alt={props.pizzaobj.name} />
+//       <div>
+//         <h3>{props.pizzaobj.name}</h3>
+//         <p>{props.pizzaobj.ingredients}</p>
+//         <span>{props.pizzaobj.price + 3}</span>
+//       </div>
+//     </li>
+//   );
+// },
+
+function Pizza({pizzaobj}) {
+  console.log(pizzaobj);
 
   return (
     <li className="pizza">
-      <img src={props.pizzaobj.photoName} alt={props.pizzaobj.name} />
+      <img src={pizzaobj.photoName} alt={pizzaobj.name} />
       <div>
-        <h3>{props.pizzaobj.name}</h3>
-        <p>{props.pizzaobj.ingredients}</p>
-        <span>{props.pizzaobj.price + 3}</span>
+        <h3>{pizzaobj.name}</h3>
+        <p>{pizzaobj.ingredients}</p>
+        <span>{pizzaobj.price + 3}</span>
       </div>
     </li>
   );
