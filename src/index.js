@@ -126,6 +126,7 @@ function Footer() {
     </footer>
   );
 }
+// the above is js mode wittten in {new Date().toLocaleTimeString()} {} this bracket ia used
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
