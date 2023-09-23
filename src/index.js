@@ -122,7 +122,12 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}.we're currently open
+      {isopen && (
+        <div className="order">
+          <p> we're open until {closehour}:00. come visit us or order online</p>
+          <button className="btn">Order</button>
+        </div>
+      )}
     </footer>
   );
 }
