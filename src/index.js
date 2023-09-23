@@ -76,12 +76,14 @@ function Menu() {
     <main className="menu">
       <h2>our menu</h2>
 
-      {numpissas > 0 && (
+      {numpissas > 0 ? (
         <ul className="pizzas">
           {pissass.map((pizza) => (
             <Pizza pizzaobj={pizza} key={pizza.name} />
           ))}
         </ul>
+      ) : (
+        <p>we're still working on this menu. please come back later</p>
       )}
 
       {/* <Pizza
