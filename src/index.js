@@ -68,15 +68,21 @@ function Header() {
 }
 
 function Menu() {
+  const pissass = pizzaData;
+  // const pissass = []; // empty array is also truely value
+  const numpissas = pissass.length;
+
   return (
     <main className="menu">
       <h2>our menu</h2>
 
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaobj={pizza} key={pizza.name} />
-        ))}
-      </ul>
+      {numpissas > 0 && (
+        <ul className="pizzas">
+          {pissass.map((pizza) => (
+            <Pizza pizzaobj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      )}
 
       {/* <Pizza
         name="Pizza Spinaci"
