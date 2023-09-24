@@ -103,18 +103,20 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
+function Pizza({ pizzaobj }) {
+  // destructing the props //
+  // now it has only pizzaobj props not others //
+  console.log(pizzaobj);
 
-  if (props.pizzaobj.soldOut) return null;
+  if (pizzaobj.soldOut) return null;
 
   return (
     <li className="pizza">
-      <img src={props.pizzaobj.photoName} alt={props.pizzaobj.name} />
+      <img src={pizzaobj.photoName} alt={pizzaobj.name} />
       <div>
-        <h3>{props.pizzaobj.name}</h3>
-        <p>{props.pizzaobj.ingredients}</p>
-        <span>{props.pizzaobj.price + 3}</span>
+        <h3>{pizzaobj.name}</h3>
+        <p>{pizzaobj.ingredients}</p>
+        <span>{pizzaobj.price + 3}</span>
       </div>
     </li>
   );
@@ -135,23 +137,23 @@ function Footer() {
   return (
     <footer className="footer">
       {isopen ? (
-        <order closehours={closehour} />
+        <Order closehours={closehour} openhours={openhour} />
       ) : (
         <p>
-          we're happy to welcome you between {openhour}:00 and {closehour}:00
+          we're happy to welcome you between {openhour}:00 and {closehour}:00.
         </p>
       )}
     </footer>
   );
 }
 
-function order(props) {
+function Order({ closehours, openhours }) {
   // we extracted jsx here in new function //
   return (
     <div className="order">
       <p>
-        we're open until {props.closehours.closehour}:00. come visit us or order
-        online
+        we're open from {openhours}:00 to {closehours}:00. come visit us or
+        order online
       </p>
       <button className="btn">Order</button>
     </div>
