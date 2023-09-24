@@ -135,10 +135,7 @@ function Footer() {
   return (
     <footer className="footer">
       {isopen ? (
-        <div className="order">
-          <p> we're open until {closehour}:00. come visit us or order online</p>
-          <button className="btn">Order</button>
-        </div>
+        <order closehours={closehour} />
       ) : (
         <p>
           we're happy to welcome you between {openhour}:00 and {closehour}:00
@@ -147,6 +144,20 @@ function Footer() {
     </footer>
   );
 }
+
+function order(props) {
+  // we extracted jsx here in new function //
+  return (
+    <div className="order">
+      <p>
+        we're open until {props.closehours.closehour}:00. come visit us or order
+        online
+      </p>
+      <button className="btn">Order</button>
+    </div>
+  );
+}
+
 // the above is js mode wittten in {new Date().toLocaleTimeString()} {} this bracket ia used
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
