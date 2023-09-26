@@ -115,15 +115,15 @@ function Pizza({ pizzaobj }) {
   // now it has only pizzaobj props not others //
   console.log(pizzaobj);
 
-  if (pizzaobj.soldOut) return null;
+  // if (pizzaobj.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaobj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaobj.photoName} alt={pizzaobj.name} />
       <div>
         <h3>{pizzaobj.name}</h3>
         <p>{pizzaobj.ingredients}</p>
-        <span>{pizzaobj.price + 3}</span>
+        <span>{pizzaobj.soldOut ? "SOLD OUT" : pizzaobj.price}</span>
       </div>
     </li>
   );
