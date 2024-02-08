@@ -75,7 +75,6 @@ function Menu() {
   return (
     <main className="menu">
       <h2>our menu</h2>
-
       {numpissas > 0 ? (
         // <> it is react fragment
         <>
@@ -92,20 +91,6 @@ function Menu() {
       ) : (
         <p>we're still working on this menu. please come back later</p>
       )}
-
-      {/* <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10} // dont pass string //
-      />
-
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mushrooms"
-        price={12} // dont pass string //
-        photoName="pizzas/funghi.jpg"
-      /> */}
     </main>
   );
 }
